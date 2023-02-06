@@ -5,20 +5,14 @@ export default class Navbar extends Component {
 
 		return (
 
-			<form id="form" className="container justify-between rounded items-center bg-gradient-to-t from-black to-blue-900  mx-auto my-2 flex flex-col p-2" onSubmit={(e) => { e.preventDefault() }}>
+			<form id="form" className="justify-between rounded items-center bg-gradient-to-t from-black to-blue-900  mx-auto my-2 flex space-x-14 p-4 sticky top-0" >
 				<input id="search" autoComplete="off" placeholder="Topic" type="text" className="text-center rounded p-2 bg-white/30 w-[100%]" />
 
-				<div className="flex my-2 justify-between w-[100%] items-center">
 
-					<span >Speed: <input id="speed" className="w-[5em] rounded p-2 bg-white/30" defaultValue="1" type="number" max="4" min="1" required />
-					</span>
-					<span>
-						Amount: <input id="size" className="w-[5em] rounded  p-2 bg-white/30" defaultValue="10" type="number" max="100" min="10" step="10" required />
-					</span>
-					<button type="submit">
+					<input id="speed" className="w-[5em] rounded p-2 bg-white/30" defaultValue="1" type="number" max="4" min="0.5" step="0.5" required />
+					<button className="w-[5em]" type="submit">
 						<SearchIcon />
 					</button>
-				</div>
 			</form>
 		)
 	}

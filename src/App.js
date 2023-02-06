@@ -11,13 +11,13 @@ export default class App extends Component {
 	render() {
 		document.body.classList.add("bg-black", "text-white")
 
-		document.addEventListener("readystatechange", () => { document.querySelector("#form").addEventListener("submit", () => { this.setState({ topic: document.querySelector("#search").value ? document.querySelector("#search").value : this.state.topic, speed: document.querySelector("#speed").value, size: document.querySelector("#size").value }) }) })
+		document.addEventListener("readystatechange", () => { document.querySelector("#form").addEventListener("submit", (e) => { this.setState({ topic: document.querySelector("#search").value ? document.querySelector("#search").value : this.state.topic, speed: document.querySelector("#speed").value}) ; e.preventDefault()}) })
 
 		return (
 			<>
 
 				<Navbar />
-				<VideoForm key={this.state.topic + this.state.size} topic={this.state.topic} amount={this.state.size} speed={this.state.speed} />
+				<VideoForm key={this.state.topic} topic={this.state.topic} amount={this.state.size} speed={this.state.speed} />
 			</>
 		)
 	}
