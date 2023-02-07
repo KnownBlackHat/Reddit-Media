@@ -13,8 +13,8 @@ export default class NewsForm extends Component {
 	
 
 	fetchMoreData= async () => {
-		const url = `https://www.reddit.com/r/${this.props.topic}.json?limit=${parseInt(this.limit)+10}`
-		this.limit += 10
+		const url = `https://www.reddit.com/r/${this.props.topic}.json?limit=${parseInt(this.limit)+8}`
+		this.limit += 8
 		try {
 			const data = await fetch(url)
 			const parsedData = await data.json()
