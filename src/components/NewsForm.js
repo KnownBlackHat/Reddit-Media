@@ -26,16 +26,21 @@ export default class NewsForm extends Component {
 
 
 	async componentDidMount() {
+		this.props.setProgress(10)
 		this.setState({ loading: true })
 		const url = `https://www.reddit.com/r/${this.props.topic}.json?limit=${this.props.amount}`
-		
+		this.props.setProgress(40)
 		try {
 			const data = await fetch(url)
+			this.props.setProgress(60)
 			const parsedData = await data.json()
+			this.props.setProgress(80)
 			this.setState({ content: parsedData.data.children, maxcontent: parsedData.data.dist, loading: false })
+			this.props.setProgress(100)
 		}
 
 		catch { this.setState({ content: this.state.content || null, maxcontent: null,loading: false, error: "Unable To Find" }) }
+this.props.setProgress(100)
 	}
 	
 	render() {

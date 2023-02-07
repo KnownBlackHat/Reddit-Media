@@ -1,11 +1,16 @@
 import { Component } from "react";
+import LoadingBar from "react-top-loading-bar";
 import Navbar from "./components/Navbar";
 import VideoForm from "./components/NewsForm";
 
 export default class App extends Component {
 	constructor() {
 		super()
-		this.state = { topic: "memes", speed: 1, size: 10 }
+		this.state = { topic: "memes", speed: 1, size: 8, progress: 0 }
+	}
+
+	setProgress = (progress)=>{
+		this.setState({progress: progress})
 	}
 
 	render() {
@@ -16,8 +21,9 @@ export default class App extends Component {
 		return (
 			<>
 
+			<LoadingBar  height={3}  progress={this.state.progress} />
 				<Navbar />
-				<VideoForm key={this.state.topic} topic={this.state.topic} amount={this.state.size} speed={this.state.speed} />
+				<VideoForm setProgress={this.setProgress }key={this.state.topic} topic={this.state.topic} amount={this.state.size} speed={this.state.speed} />
 			</>
 		)
 	}
