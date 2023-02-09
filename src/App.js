@@ -3,10 +3,12 @@ import LoadingBar from "react-top-loading-bar";
 import Navbar from "./components/Navbar";
 import VideoForm from "./components/NewsForm";
 
+
 export default function App () {
-	const [topic,settopic] = useState("memes")
+	const [query,setquery] = useState('') 
+	const [subreddit,setsubreddit] = useState("memes")
 	const [speed,setspeed] = useState(1)
-	const size = 8
+	const size = 32
 	const [progress,setProgress] = useState(0)
 
 	document.body.classList.add("bg-black", "text-white")
@@ -15,8 +17,10 @@ export default function App () {
 			<>
 
 			<LoadingBar  height={3}  progress={progress} />
-				<Navbar settopic={settopic} setspeed={setspeed} />
-				<VideoForm setProgress={setProgress} key={topic} topic={topic} amount={size} speed={speed} />
+				<Navbar setquery={setquery} setspeed={setspeed} setsubreddit={setsubreddit} />
+
+				<VideoForm setProgress={setProgress} key={query.concat(subreddit)} amount={size} speed={speed} query={query} subreddit={subreddit}/>
+
 			</>
 		)
 	}
