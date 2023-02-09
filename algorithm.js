@@ -8,3 +8,5 @@ data.data.children.forEach(item=>{item.data.is_video?console.log(item.data.media
 // preview.reddit_video_preview
 // beta
 data.data.children.forEach(item=>{item.data.preview.reddit_video_preview.fallback_url || console.log(item)})
+
+a.forEach(i=>{try {p.push(i.preview.reddit_video_preview.fallback_url)} catch {console.log(i)}})
