@@ -9,7 +9,7 @@ export default function Navbar ({setquery,setspeed,setsubreddit}) {
 	return (
 <>
 			<form id="form" 
-			onSubmit={ (e)=>{ search.current.value.length>0 && setquery(search.current.value); setspeed(speed.current.value); subreddit_inp.current.value && setsubreddit(subreddit_inp.current.value); e.preventDefault() } } 
+			onSubmit={ (e)=>{ setquery(search.current.value); setspeed(speed.current.value); subreddit_inp.current.value && setsubreddit(subreddit_inp.current.value); e.preventDefault() } } 
 			className="justify-between rounded items-center bg-gradient-to-t from-black to-blue-900  mx-auto my-2 flex space-x-14 p-4 sticky top-0" >
 				<input id="search" ref={search} autoComplete="off" placeholder="Topic" type="search" className="text-center rounded p-2 bg-white/30 w-[100%]" />
 
