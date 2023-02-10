@@ -5,7 +5,7 @@ This web app provides result of quried data from reddit
 **Reddit Media Locator Web App:**
 > **<https://knownblackhat.github.io/cdn-web-app/>**
 
-**How To Use: **
+**How To Use:**
 > There are 3 inputs boxes and one button :
 > 1) Topic (anything you can search on given subreddit) `Optional`
 > 2) Subreddit (Equivalent to Category but for better results use suggestion)`Default: memes`
