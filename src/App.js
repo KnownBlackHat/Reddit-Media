@@ -10,7 +10,7 @@ export default function App () {
 	const [speed,setspeed] = useState(1)
 	const size = 32
 	const [progress,setProgress] = useState(0)
-
+	document.title="Reddit Media Locater"
 	document.body.classList.add("bg-black", "text-white")
 
 	return (
