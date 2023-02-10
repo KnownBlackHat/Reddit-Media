@@ -1,6 +1,6 @@
 import {useState, useEffect, useRef} from "react"
 
-export default function Navbar ({placeholder,subreddit_inp}) {
+export default function Navbar ({placeholder,subreddit_inp,unsafe_filter}) {
 
 const [search_box,setsearch_box] = useState('')
 const [suggestion,setsuggestion] = useState([])
@@ -9,14 +9,14 @@ const [isLoaded,setisLoaded] = useState(false)
 useEffect(()=>{
 	const fetchsuggestion = async ()=>{
 		setisLoaded(false)
-		let data= await fetch(`https://www.reddit.com/api/search_reddit_names.json?query=${search_box}&include_over_18=true`)
+		let data= await fetch(`https://www.reddit.com/api/search_reddit_names.json?query=${search_box}&include_over_18=${unsafe_filter}`)
 		data = await data.json()
 		setsuggestion(data.names?data.names:[])
 		setisLoaded(true)
 	}
 
 	search_box && fetchsuggestion()
-},[search_box])
+},[search_box,unsafe_filter])
 
 useEffect(()=>{
 	document.addEventListener("click",()=>{

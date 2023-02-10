@@ -10,13 +10,12 @@ export default function NewsForm (props) {
 	const [error,seterror] = useState(null)
 	const prop = useRef(props)
 	const url = useRef()
-
 	const fetchMoreData= async () => {
 		if (props.query) {
-		url.current = `https://www.reddit.com/r/${props.subreddit}/search.json?raw_json=1&limit=${props.amount}&include_over_18=true&type=link&after=${after}&q=${props.query}`
+		url.current = `https://www.reddit.com/r/${props.subreddit}/search.json?raw_json=1&limit=${props.amount}&include_over_18=${props.unsafe_filter}&type=link&after=${after}&q=${props.query}`
 		}
 		else {
-        url.current=`https://www.reddit.com/r/${props.subreddit}.json?raw_json=1&limit=${props.amount}&include_over_18=true&type=link&after=${after}`
+        url.current=`https://www.reddit.com/r/${props.subreddit}.json?raw_json=1&limit=${props.amount}&include_over_18=${props.unsafe_filter}&type=link&after=${after}`
 		}
 
 		try {
@@ -35,10 +34,10 @@ export default function NewsForm (props) {
 		prop.current.setProgress(10)
 		setloading(true)
 		if (prop.current.query) {
-			url.current = `https://www.reddit.com/r/${prop.current.subreddit}/search.json?raw_json=1&limit=${prop.current.amount}&include_over_18=true&type=link&q=${prop.current.query}`
+			url.current = `https://www.reddit.com/r/${prop.current.subreddit}/search.json?raw_json=1&limit=${prop.current.amount}&include_over_18=${prop.current.unsafe_filter}&type=link&q=${prop.current.query}`
 		}
 		else {
-		url.current =`https://www.reddit.com/r/${prop.current.subreddit}.json?raw_json=1&limit=${prop.current.amount}&include_over_18=true&type=link`
+		url.current =`https://www.reddit.com/r/${prop.current.subreddit}.json?raw_json=1&limit=${prop.current.amount}&include_over_18=${prop.current.unsafe_filter}&type=link`
 		}
 		prop.current.setProgress(40)
 		try {
@@ -72,6 +71,8 @@ export default function NewsForm (props) {
 			next={fetchMoreData}
 			loader={<Spinner />}
 			hasMore={ after?true:false }
+			endMessage={ content.length>0?<div 
+			className="text-center p-4"><strong>Yay! You have seen it all</strong></div>:null}	
 			>
 	<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-4 p-2 gap-5">
 			

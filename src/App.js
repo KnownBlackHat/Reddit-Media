@@ -9,6 +9,7 @@ export default function App () {
 	const [subreddit,setsubreddit] = useState("memes")
 	const [speed,setspeed] = useState(1)
 	const size = 32
+	const [unsafe_filter,setunsafe_filter] = useState(false)
 	const [progress,setProgress] = useState(0)
 	document.title="Reddit Media Locater"
 	document.body.classList.add("bg-black", "text-white")
@@ -17,9 +18,9 @@ export default function App () {
 			<>
 
 			<LoadingBar  height={3}  progress={progress} />
-				<Navbar setquery={setquery} setspeed={setspeed} setsubreddit={setsubreddit} />
+				<Navbar unsafe_filter={unsafe_filter} setunsafe_filter={setunsafe_filter} setquery={setquery} setspeed={setspeed} setsubreddit={setsubreddit} />
 
-				<VideoForm setProgress={setProgress} key={query.concat(subreddit)} amount={size} speed={speed} query={query} subreddit={subreddit}/>
+				<VideoForm unsafe_filter={unsafe_filter} setProgress={setProgress} key={query.concat(subreddit)} amount={size} speed={speed} query={query} subreddit={subreddit}/>
 
 			</>
 		)
