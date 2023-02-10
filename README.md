@@ -2,8 +2,7 @@
 This web app provides result of quried data from reddit
 ## [Webpage is Live](https://knownblackhat.github.io/cdn-web-app/)
 
-**Reddit Media Locator Web App:**
-> **<https://knownblackhat.github.io/cdn-web-app/>**
+**[Reddit Media Locator Web App](https://knownblackhat.github.io/cdn-web-app/)**
 
 **How To Use:**
 > There are 3 inputs boxes and one button :
