@@ -7,6 +7,7 @@ const [suggestion,setsuggestion] = useState([])
 const dropdown = useRef()
 const [isLoaded,setisLoaded] = useState(false)
 useEffect(()=>{
+	let timerid;
 	const fetchsuggestion = async ()=>{
 		setisLoaded(false)
 		let data= await fetch(`https://www.reddit.com/api/search_reddit_names.json?query=${search_box}&include_over_18=${unsafe_filter}`)
@@ -15,7 +16,10 @@ useEffect(()=>{
 		setisLoaded(true)
 	}
 
-	search_box && fetchsuggestion()
+	timerid = setTimeout(()=>{search_box && fetchsuggestion()},500)
+
+	return ()=>{clearTimeout(timerid)}
+
 },[search_box,unsafe_filter])
 
 useEffect(()=>{

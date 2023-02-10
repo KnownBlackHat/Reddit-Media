@@ -9,11 +9,26 @@ export default function Navbar ({setquery,setspeed,setsubreddit,unsafe_filter,se
 	return (
 <>
 			<form id="form" 
-			onSubmit={ (e)=>{ setquery(search.current.value); setspeed(speed.current.value); subreddit_inp.current.value && setsubreddit(subreddit_inp.current.value); e.preventDefault() } } 
+			onSubmit={ (e)=>{
+				console.log("Form Submited")
+				e.preventDefault();
+			 setquery(search.current.value); setspeed(speed.current.value); subreddit_inp.current.value && setsubreddit(subreddit_inp.current.value) 
+
+		} }
+
+
 			className="z-10 justify-between rounded items-center bg-gradient-to-t from-black to-blue-900  mx-auto my-2 flex space-x-14 p-4 sticky top-0" >
 				<div id="query" className="flex items-center space-x-2">
 				 <input id="search" ref={search} autoComplete="off" placeholder="Topic" type="search" className="text-center rounded p-2 bg-white/30 w-[100%]" />
-				<button  className={`text-center rounded p-1 h-10 bg-${unsafe_filter?'red':'green'}-600/70  text-xs`} onClick={()=>{console.log(unsafe_filter);setunsafe_filter(unsafe_filter?false:true)}} > {unsafe_filter?'unsafe':'safe'}
+				<button  className={`text-center rounded p-1 h-10 bg-${unsafe_filter?'red':'green'}-600/70  text-xs`} 
+		onMouseDown={
+			(e)=>{
+				e.preventDefault()
+				e.stopPropagation();
+				console.log("button Clicked")
+				setunsafe_filter(unsafe_filter?false:true)
+		}}
+		> {unsafe_filter?'unsafe':'safe'}
 				</button>
 				</div>
 
