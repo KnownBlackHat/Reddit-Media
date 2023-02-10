@@ -8,8 +8,8 @@
 > 4) Safe Search (You can disable this for explict content search )
 
 ## **Benefits:**
-> No reloading of page
-> No next or previous button to go to next page. Just Scroll and get new posts!
+> + No reloading of page
+> = No next or previous button to go to next page. Just Scroll and get new posts!
 > No Ads
 > No Login or SignUp [Currently]
 > Everything free
