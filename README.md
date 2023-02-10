@@ -9,11 +9,16 @@
 
 ## **Benefits:**
 > + No reloading of page
-> - No next or previous button to go to next page. Just Scroll and get new posts!
-> No Ads
-> No Login or SignUp [Currently]
-> Everything free
-> No more annoying redirects
-> Get what you need (If you want to see post origin you can click `Visit Me` button)
-> It has video player to without any redirection of page
-> Everthing at one place and **_FREE_**
+> + No next or previous button to go to next page. Just Scroll and get new posts!
+> + No Ads
+> + No Login or SignUp [Currently]
+> + Everything free
+> + No more annoying redirects
+> + Get what you need (If you want to see post origin you can click `Visit Me` button)
+> + It has video player to without any redirection of page
+> + Everthing at one place and **_FREE_**
+
+## **Disadvantages:**
+> Currently We don't Support audio with video 
+> We can only provide media from reddit only
+> We don't give data using preferences 
