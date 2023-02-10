@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import NewsItems from "./NewsItem";
 import Spinner from "./Spinner";
-
 export default function NewsForm (props) {
 
 	const [content,setcontent] = useState([])
@@ -74,31 +73,33 @@ export default function NewsForm (props) {
 			loader={<Spinner />}
 			hasMore={ after?true:false }
 			>
-	<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-4 p-2 gap-4">
+	<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-4 p-2 gap-5">
 			
 
 
-					{content && content.map((item, index) => {
+					{content && content.map((item) => {
 
 						return <NewsItems
 
-							tabIndex={index}
 							
-							key={index}
+							key={item.data.id}
 
 							headline={item.data.title}
 
 							newslink={item.data.url}
 
-							media={ item.data.preview && item.data.preview.reddit_video_preview &&item.data.preview.reddit_video_preview.fallback_url }
 
-							image={item.data.url_overridden_by_dest}
+							media={
+item.data.is_video?(item.data.media && item.data.media.reddit_video && item.data.media.reddit_video.fallback_url):(item.data.preview && item.data.preview.reddit_video_preview && item.data.preview.reddit_video_preview.fallback_url)
 
+		}
+
+image={
+	(item.data.url.match(/.*\.(gif|gifv|jpg|png|jpeg)$/) && item.data.url)	||	(item.data.preview && item.data.preview.images[0].variants.gif && item.data.preview.images[0].variants.gif.url)	||	(item.data.preview &&  item.data.preview.images[0].source?item.data.preview.images[0].source.url:item.data.thumbnail) 
+}
 							speed={props.speed}
 
 						/>
-
-
 					})}
 
 			</div>
