@@ -1,7 +1,7 @@
 # **[Reddit Media Locator Web App](https://knownblackhat.github.io/cdn-web-app/)**
 
 ## **How To Use:**
-### There are 3 inputs boxes and one button :
+### There are 3 inputs boxes and 1 button :
  1) Topic (anything you can search on given subreddit) `Optional`
  2) Subreddit (Equivalent to Category but for better results use suggestion) `Default: memes`
  3) Playbackspeed  (You can set video speed ) `Optional`
@@ -19,6 +19,6 @@
  + Everthing at one place and **_FREE_**
 
 ## **Disadvantages:**
- Currently We don't Support audio with video 
- We can only provide media from reddit only
- We don't give data using preferences 
+- Currently We don't Support audio with video 
+- We can only provide media from reddit only
+- We don't give data using preferences 
