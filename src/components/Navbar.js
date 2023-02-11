@@ -21,11 +21,19 @@ export default function Navbar ({setquery,setspeed,setsubreddit,unsafe_filter,se
 				<div id="query" className="flex items-center space-x-2">
 				 <input id="search" ref={search} autoComplete="off" placeholder="Topic" type="search" className="text-center rounded p-2 bg-white/30 w-[100%]" />
 				<button  className={`text-center rounded p-1 h-10 bg-${unsafe_filter?'red':'green'}-600/70  text-xs`} 
+		
+
+		onClick={ e=>{
+			e.preventDefault();
+			e.stopPropagation();
+		}}
+
+
+
 		onMouseDown={
 			(e)=>{
-				e.preventDefault()
+				e.preventDefault();
 				e.stopPropagation();
-				console.log("button Clicked")
 				setunsafe_filter(unsafe_filter?false:true)
 		}}
 		> {unsafe_filter?'unsafe':'safe'}
