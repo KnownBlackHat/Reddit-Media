@@ -19,6 +19,12 @@ export default function App () {
 
 			<LoadingBar  height={3}  progress={progress} />
 				<Navbar unsafe_filter={unsafe_filter} setunsafe_filter={setunsafe_filter} setquery={setquery} setspeed={setspeed} setsubreddit={setsubreddit} />
+            
+                <div className="text-center text-white rounded font-bold bg-yellow-500">
+                    We Have a discord server! <a href="https://discord.gg/2uYRT2KmBU" className="text-blue-500">Join Now</a>
+        <br />
+                    Give feedback on our discord server and get the latest updates!
+                </div>
 
 				<VideoForm unsafe_filter={unsafe_filter} setProgress={setProgress} key={query.concat(subreddit)} amount={size} speed={speed} query={query} subreddit={subreddit}/>
 
