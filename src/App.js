@@ -11,7 +11,7 @@ export default function App () {
 	const size = 32
 	const [unsafe_filter,setunsafe_filter] = useState(false)
 	const [progress,setProgress] = useState(0)
-	document.title="Reddit Media Locater"
+	document.title="Reddit Media"
 	document.body.classList.add("bg-black", "text-white")
 
 	return (
