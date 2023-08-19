@@ -1,4 +1,4 @@
-# **[Reddit Media Locator Web App](https://knownblackhat.github.io/)**
+# **[Reddit Media Locator Web App](https://knownblackhat.github.io/Reddit-Media)**
 
 ## **How To Use:**
 ### There are 3 inputs boxes and 1 button :
