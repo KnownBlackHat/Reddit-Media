@@ -80,7 +80,17 @@ export default function Main (props) {
 
         {content && content.map((item) => {
 
-            return <MediaCard
+            return <>
+                <amp-ad width="100vw" height="320"
+                    type="adsense"
+                    data-ad-client="ca-pub-4345375298479232"
+                    data-ad-slot="3336053933"
+                    data-auto-format="rspv"
+                    data-full-width="">
+                <div overflow=""></div>
+                </amp-ad>
+
+                <MediaCard
 
 
             key={item.data.id}
@@ -101,6 +111,7 @@ export default function Main (props) {
             speed={props.speed}
 
                 />
+                </>
         })}
 
         </div>
