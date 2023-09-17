@@ -1,4 +1,5 @@
 import { useRef } from "react";
+
 export default function MediaCard (props) {
     const { image, media, headline, newslink, speed } = props
     const video = useRef();
@@ -60,7 +61,7 @@ export default function MediaCard (props) {
         {media ?
             <>
             <div className="flex justify-end"> <span className="bg-red-600 absolute rounded p-1 text-xs"> Video </span> </div>
-            <video defer ref={video}
+            <video loading="lazy" defer ref={video}
             preload="auto" 
             onError={handleVideoError}
             loop
@@ -69,6 +70,7 @@ export default function MediaCard (props) {
             className="rounded h-[15em] w-[100%] bg-black" src={media} alt="Failed to load" /></>
             :
             <div className="bg-black inset-0"> <img
+            loading="lazy"
             preload="auto" defer
             onClick={handleClickImage}
 
