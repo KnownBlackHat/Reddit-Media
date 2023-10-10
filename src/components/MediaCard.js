@@ -82,7 +82,7 @@ export default function MediaCard (props) {
         <div className="heading p-2 m-2 font-bold "> {headline} </div>
         </div>
 
-        <div className="text-white text-center mb-4"><a className="p-2 bg-blue-700 rounded" alt={media??image} href={mediaShrinkLink} target="_blank" rel="noreferrer">Get it</a></div>
+        <div className="text-white text-center mb-4"><a className="p-2 bg-blue-700 rounded" href={mediaShrinkLink} target="_blank" rel="noreferrer">Get it</a></div>
         </div>
     )
 }
