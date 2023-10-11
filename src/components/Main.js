@@ -88,9 +88,6 @@ export default function Main (props) {
 
             headline={item.data.title}
 
-            newslink={item.data.url}
-
-
             media={
                 item.data.is_video?(item.data.media && item.data.media.reddit_video && item.data.media.reddit_video.fallback_url):(item.data.preview && item.data.preview.reddit_video_preview && item.data.preview.reddit_video_preview.fallback_url)
 

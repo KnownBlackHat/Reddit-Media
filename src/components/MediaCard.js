@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 export default function MediaCard (props) {
-    const { image, media, headline, newslink, speed } = props
+    const { image, media, headline, speed } = props
     const video = useRef();
     const handleFocus = () => {
         video.current && !video.current.classList.contains("fixed") &&  video.current.play();
